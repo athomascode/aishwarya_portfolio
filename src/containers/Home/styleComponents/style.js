@@ -3,10 +3,15 @@ import { colors } from "../../../utils/colors";
 
 export const Wrapper = styled.div`
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 `;
 
 export const ProfileSection = styled.div`
   padding: 5px;
+  flex: 1;
 `;
 
 export const ProfileName = styled.h1`

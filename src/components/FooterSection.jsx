@@ -8,6 +8,7 @@ const Footer = styled.footer`
   padding: 25px;
   color: ${colors.cornsilk};
   font-size: x-small;
+  flex-shrink: 0;
 `;
 
 function FooterSection() {
