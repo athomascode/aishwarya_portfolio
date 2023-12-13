@@ -9,7 +9,7 @@ const NavbarSection = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 1rem 5rem;
-  background-color: rgba(0,0,0, 0.62);
+  background-color: #e62e00;
   text-align: center;
 `;
 
@@ -18,7 +18,7 @@ const NavbarLinks = styled.nav`
 `;
 
 const NavLink = styled.a`
-  color: ${colors.cornsilk};
+  color: ${colors.white};
   text-decoration: none;
   margin-right: 50px;
 `;
@@ -35,7 +35,7 @@ function Navbar() {
         <NavLink target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/aishwarya-t"><SiLinkedin size={20}/></NavLink>    
       </NavbarLinks>
       <NavbarText>
-        <Heading fs="1rem" color={colors.cornsilk}>athomascode</Heading> 
+        <Heading fs="1rem" color={colors.white}>athomascode</Heading> 
       </NavbarText>       
     </NavbarSection>
   )

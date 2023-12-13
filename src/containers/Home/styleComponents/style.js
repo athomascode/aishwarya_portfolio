@@ -52,5 +52,5 @@ export const Skill = styled.h2`
   background-color: rgba(0, 0, 0, 0.568);
   border-radius: 5px;
   font-weight: 400;
-  color: ${colors.cornsilk};
+  color: ${colors.white};
 `;
