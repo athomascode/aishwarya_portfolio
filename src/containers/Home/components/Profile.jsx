@@ -1,49 +1,51 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-import { Heading } from "../../../components/Text";
+import { Container, Col, Row } from "react-bootstrap";
+import { Heading, SubHeading } from "../../../components/Text";
 import { 
   ProfileSection, 
   ProfileName, 
   ProfileSummary, 
-  SkillsSection, 
-  SkillsList, 
-  Skill, 
+  SkillBox,
+  SkillSubBox
 } from "../styleComponents/style";
+import { FlexRow, FlexCol } from "../../../components/Div";
 
 function Profile(props) {
-  const { list } = props;
+  const { skillslist, info } = props;
   return (
     <ProfileSection>
       <Row className="justify-content-center">
         <Col>
-          <ProfileName>
-            Hi , I'm Aishwarya Thomas.
-          </ProfileName>  
-          <Heading ff="'Acme', sans-serif">
-            SOFTWARE DEVELOPER
+          <ProfileName>{info.name}</ProfileName>  
+          <Heading ff="'Acme', sans-serif" mb="1rem">
+            {info.role}
           </Heading>  
         </Col>
       </Row>
       <Row className="justify-content-center">
         <Col>
-          <ProfileSummary>
-            .Net Web Developer with 5+ years experience in C#, MSSQL, JavaScript, HTML and CSS in Agile environments
-            and with all stages of development life cycle of dynamic web projects.
-          </ProfileSummary>
+          <ProfileSummary>{info.summary}</ProfileSummary>
         </Col>
       </Row>
-      <Row className="justify-content-center">
-        <Col>
-          <SkillsSection>
-            <Heading fw="700" padding="20px" color="#000000b9">My Skills</Heading>
-            <SkillsList>
-              {list.map((skill, index) => (
-              <Skill key={`${index}-${skill}`}>{skill}</Skill>
-              ))}
-            </SkillsList>
-          </SkillsSection>
-        </Col>
-      </Row>
+      <Container>
+        <FlexRow>
+          <Heading padding="20px">My Skills</Heading>
+          {skillslist.map((category,index) => (
+            <FlexCol xs={12} md={3}>
+              <SkillBox>
+                <SubHeading key={`${index}`-`${category}`}>{category.name}</SubHeading>
+                {category.skills.map((skill,index) => (
+                  <SkillSubBox>
+                    <SubHeading fw="400" fs="0.9rem" mb="0px" key={`${index}`-`${skill}`}>
+                      {skill}
+                    </SubHeading>
+                  </SkillSubBox>
+                ))}
+              </SkillBox>
+            </FlexCol>
+          ))}
+        </FlexRow>
+      </Container>
     </ProfileSection> 
   )
 }

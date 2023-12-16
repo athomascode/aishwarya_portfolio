@@ -8,13 +8,13 @@ const NavbarSection = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 5rem;
-  background-color: #e62e00;
-  text-align: center;
+  padding: 1.5rem 5rem;
+  background-color: ${colors.black};
 `;
 
 const NavbarLinks = styled.nav`
   display: flex;
+  align-items: center;
 `;
 
 const NavLink = styled.a`

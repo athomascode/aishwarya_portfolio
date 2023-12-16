@@ -10,9 +10,9 @@ body {
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.726);
   margin: 0;
-  background: repeating-linear-gradient(to right, rgba(245, 245, 245, 0.952), rgba(245, 245, 245, 0.952)), url('./assets/portfolio_bg.png') ;
+  background: repeating-linear-gradient(to right, rgba(245, 245, 245, 0.982), rgba(245, 245, 245, 0.97)), url('./assets/portfolio_bg.png') ;
   background-position: center;
   height: 100vh;
-  max-height: 120rem;
+  width: 100vw;
   position: relative;
 }

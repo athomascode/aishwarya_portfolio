@@ -4,11 +4,12 @@ import { colors } from "../utils/colors";
 
 const Footer = styled.footer`
   text-align: center;
-  background-color:#e62e00;
+  background-color:${colors.black};
   padding: 25px;
   color: ${colors.white};
   font-size: small;
   flex-shrink: 0;
+  margin-top: 2rem;
 `;
 
 function FooterSection() {

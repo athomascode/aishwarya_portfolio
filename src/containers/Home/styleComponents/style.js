@@ -20,7 +20,7 @@ export const ProfileName = styled.h1`
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-family: 'Satisfy', cursive;
-  color: rgba(0, 126, 117, 0.904);
+  color: ${colors.orange};
 `;
 
 export const ProfileSummary = styled.p`
@@ -30,27 +30,28 @@ export const ProfileSummary = styled.p`
   font-weight: 600;
 `;
 
-export const SkillsSection = styled.div`
-  margin: 40px;
-  margin-left: 15%;
-  margin-right: 15%;
-  background:  rgba(38, 65, 63, 0.356);
-  border-radius: 20px; 
+export const SkillBox = styled.div`
+  flex: 1;
+  border: 3px solid ${colors.orange};
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  background-color: ${colors.offwhite};
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-image: linear-gradient(90deg,${colors.orange},${colors.red});
+    color: ${colors.white};
+  }
 `;
 
-export const SkillsList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 5% 0 5%;
-`;
-
-export const Skill = styled.h2`
-  padding: 1rem 2rem;
-  margin: 0 1.5rem 1.5rem 1.5rem;
-  font-size: 1rem;
-  background-color: rgba(0, 0, 0, 0.568);
+export const SkillSubBox =styled.div`
   border-radius: 5px;
-  font-weight: 400;
-  color: ${colors.white};
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: black;
+  color: white;
 `;
