@@ -1,12 +1,13 @@
 import styled from "styled-components";
 import { colors } from "../../../utils/colors";
+import BgImage from "../../../assets/portfolio_bg.png";
 
-export const Wrapper = styled.div`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
+export const BackgroundWrapper = styled.div`
+  background: repeating-linear-gradient(to right, rgba(245, 245, 245, 0.982), rgba(245, 245, 245, 0.97)),
+              url(${BgImage});
+  background-position: center;
+  min-height: inherit;
+  padding-bottom: 2rem;
 `;
 
 export const ProfileSection = styled.div`

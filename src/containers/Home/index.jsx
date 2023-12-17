@@ -1,16 +1,18 @@
 import React from "react";
-import "../../index.css";
 import { skillsList, profileInfo } from "./utils/utils";
-import { Wrapper } from "./styleComponents/style";
+import { MainWrapper } from "../../components/Div";
+import { BackgroundWrapper } from "./styleComponents/style";
 import Profile from "./components/Profile";
 
 export default function Home() {
   return (
-    <Wrapper>
-      <Profile 
-        skillslist={skillsList}
-        info={profileInfo}
-      />
-    </Wrapper>
+    <MainWrapper>
+      <BackgroundWrapper>
+        <Profile 
+          skillslist={skillsList}
+          info={profileInfo}
+        />
+      </BackgroundWrapper>
+    </MainWrapper>
   )
 }

@@ -9,12 +9,14 @@ const Footer = styled.footer`
   color: ${colors.white};
   font-size: small;
   flex-shrink: 0;
-  margin-top: 2rem;
+  margin-top: ${props => props.mt ? props.mt : "2rem"};
 `;
 
-function FooterSection() {
+function FooterSection(props) {
+  const { mt } = props;
+
   return (
-    <Footer>
+    <Footer mt={mt}>
       © Copyright 2023 by Aishwarya Thomas
     </Footer>
   )

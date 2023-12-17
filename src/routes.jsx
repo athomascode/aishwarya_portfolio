@@ -1,10 +1,12 @@
 import { Route } from "react-router-dom";
 import HomeRoutes from "./containers/Home/routes/routes";
+import LingoLadderRoutes from "./containers/LingoLadder/routes/routes";
 import Navbar from "./components/Navbar";
 import FooterSection from "./components/FooterSection";
 
-const routes =[
-  ...HomeRoutes
+const routes = [
+  ...HomeRoutes,
+  ...LingoLadderRoutes,
 ]
 
 const renderRoute = (route, props) => (
@@ -13,13 +15,14 @@ const renderRoute = (route, props) => (
     path={route.path}
     exact={route.exact}
     element={
-      route.path == "/sign_in" ?
+      route.path == "/" ?
         <div>
+          <Navbar />
           <route.component {...props} />
+          <FooterSection mt="0px" />
         </div>
       :
         <div>
-          <Navbar />
           <route.component {...props} />
           <FooterSection />
         </div>
