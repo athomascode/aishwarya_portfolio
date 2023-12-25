@@ -37,5 +37,5 @@ export const skillsList = [
 export const profileInfo = {
   name: "Hi , I'm Aishwarya Thomas.",
   role: "SOFTWARE DEVELOPER",
-  summary: ".Net Web Developer with 5+ years experience in C#, MSSQL, JavaScript, HTML and CSS in Agile environments and with all stages of development life cycle of dynamic web projects.",
+  summary: "Experienced Web Developer with over 5 years of hands-on experience at navigating all stages of the development life cycle. Passionate about innovate problem-solving, analysis and debugging.",
 };

@@ -12,8 +12,9 @@ export const MainWrapper = styled.div`
 export const FlexRow = styled(Row)`
   display: flex;
   align-items: ${props => props.align ? props.align : "unset"};
+  justify-content: ${props => props.justifycon ? props.justifycon : "unset"};
   width: ${props => props.width ? props.width : "unset"};
-  margin-left: ${props => props.ml ? props.ml : "0px"};
+  margin: ${props => props.margin ? props.margin : "unset"};
 `;
 
 export const FlexCol = styled(Col)`

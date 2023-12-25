@@ -39,7 +39,6 @@ export const SkillBox = styled.div`
   margin: 10px;
   text-align: center;
   background-color: ${colors.offwhite};
-  cursor: pointer;
   transition: background-color 0.3s ease;
 
   &:hover {
@@ -55,4 +54,13 @@ export const SkillSubBox =styled.div`
   text-align: center;
   background-color: black;
   color: white;
+`;
+
+export const ProjectBox = styled.div`
+  border: 3px solid ${colors.orange};
+  border-radius: 25px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  background-color: ${colors.offwhite};
 `;

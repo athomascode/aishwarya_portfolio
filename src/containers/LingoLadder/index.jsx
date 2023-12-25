@@ -4,12 +4,17 @@ import Table from 'react-bootstrap/Table';
 import styled from "styled-components";
 import { MdPostAdd } from "react-icons/md";
 import { TiDelete } from "react-icons/ti";
+import { FaRegEdit } from "react-icons/fa";
 import { useWords } from "./hooks/useWords";
 import { MainWrapper, FlexRow, FlexCol } from "../../components/Div";
-import { Heading } from "../../components/Text";
+import { Heading, SubHeading } from "../../components/Text";
 
 
 const AddIcon = styled(MdPostAdd)`
+  cursor: pointer;
+`;
+
+const EditIcon = styled(FaRegEdit)`
   cursor: pointer;
 `;
 
@@ -27,7 +32,7 @@ export default function LingoLadder() {
 
   return (
     <MainWrapper className="mt-5">
-      <Heading ff="'Acme', sans-serif" mb="1rem">Lingo Ladder</Heading>
+      <Heading ff="'Acme', sans-serif" mb="1rem">LINGO LADDER</Heading>
       <FlexRow width="95vw">
         <FlexCol justify="flex-end">
           <AddIcon size={35} onClick={() => navigate('/lingoladder/new')} />
@@ -38,23 +43,36 @@ export default function LingoLadder() {
           <Table responsive striped bordered hover style={{width: "90vw"}}>
             <thead>
               <tr>
-                <th>#</th>
-                <th>Word</th>
-                <th>Hiragana/Katakana</th>
-                <th>Notes</th>
-                <th>Actions</th>
+                <th><SubHeading mt="20px">#</SubHeading></th>
+                <th><SubHeading mt="20px">Japanese Word</SubHeading></th>
+                <th><SubHeading mt="20px">Meaning</SubHeading></th>
+                <th><SubHeading mt="20px">Notes</SubHeading></th>
+                <th><SubHeading mt="20px">Actions</SubHeading></th>
               </tr>
             </thead>
             <tbody>
-              {(wordsList || []).map((vocabulary, index) => (
-                <tr>
-                  <td>{vocabulary.id}</td>
-                  <td>{vocabulary.word}</td>
-                  <td>{vocabulary.writing}</td>
-                  <td><p style={{ whiteSpace: 'pre-line' }}>{vocabulary.notes}</p></td>
-                  <td><DeleteIcon size={20} onClick={() => actions.deleteWordDetails(vocabulary.id)} /></td>       
-                </tr>
-              ))}    
+            { wordsList.length === 0 ? (
+              <tr key="no-records">
+                <td colSpan={6}><SubHeading mt="20px">There are no records to display !!</SubHeading></td>
+              </tr>
+            ) : (
+              (wordsList || []).map((vocabulary, index) => (
+              <tr key={vocabulary.id}>
+                <td>{vocabulary.id}</td>
+                <td>{vocabulary.word}</td>
+                <td>{vocabulary.meaning}</td>
+                <td><p style={{ whiteSpace: 'pre-line' }}>{vocabulary.notes}</p></td>
+                <td>
+                  <FlexRow>
+                    <FlexCol justify="space-evenly">
+                      <EditIcon size={20}  onClick={() => navigate(`/lingoladder/edit/${vocabulary.id}`)}/>
+                      <DeleteIcon size={23} onClick={() => actions.deleteWordDetails(vocabulary.id)} />
+                    </FlexCol>
+                  </FlexRow>
+                  </td>       
+              </tr>
+              ))
+            )}
             </tbody>
           </Table> 
         </FlexCol>

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from 'react-bootstrap/Button';
 import { Form, Field } from "react-final-form";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from "react-router-dom";
 import { IoArrowBackCircleSharp } from "react-icons/io5";
 import styled from "styled-components";
 import Input from "../../components/Input";
@@ -14,18 +14,25 @@ const BackIcon = styled(IoArrowBackCircleSharp)`
   cursor: pointer;
 `;
 
-export default function Add() {
+export default function Edit() {
+  const { id } = useParams();
+  const { wordDetails, actions } = useWords();
+
+  useEffect(() => {
+    actions.getWordDetailsforId(parseInt(id, 10));
+  }, [])
+
   const { required } = useValidation();
-  const { actions } = useWords();
   const navigate = useNavigate();
 
   const onSubmit = (values) => {
-    actions.addWordDetails(values); 
+    actions.updateWordDetailsforId(parseInt(id, 10), values); 
     navigate('/lingoladder');
   }
 
   return (
-    <MainWrapper className="mt-5">
+    <div>
+      <MainWrapper className="mt-5">
       <Heading ff="'Acme', sans-serif" mb="1rem">Lingo Ladder</Heading>
       <FlexRow style={{marginLeft: "2rem"}}>
         <FlexCol justify="flex-start">
@@ -35,6 +42,7 @@ export default function Add() {
       <FlexRow className="mt-4">
         <FlexCol justify="center">
           <Form
+            initialValues={wordDetails}
             onSubmit={onSubmit}
             render={({handleSubmit, form, submitting, pristine, values}) => (
               <form onSubmit={handleSubmit}>
@@ -57,7 +65,7 @@ export default function Add() {
                     label="Meaning"
                     validate={required}
                   />
-                </div>             
+                </div>
                 <div>
                   <Field
                     name="notes"
@@ -78,5 +86,6 @@ export default function Add() {
         </FlexCol>
       </FlexRow>   
     </MainWrapper>
+    </div>
   )
 }

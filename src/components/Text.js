@@ -19,4 +19,5 @@ export const SubHeading = styled.h4`
   padding: ${props => props.padding ? props.padding : "0px"};
   text-align: ${props => props.textAlign ? props.textAlign : "center"};
   color: ${props => props.color ? props.color : "unset"};
+  margin-top: ${props => props.mt ? props.mt : "unset"};
 `;
