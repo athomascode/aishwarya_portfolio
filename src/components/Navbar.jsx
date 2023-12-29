@@ -10,6 +10,10 @@ const NavbarSection = styled.header`
   justify-content: space-between;
   padding: 1.5rem 5rem;
   background-color: ${colors.black};
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 `;
 
 const NavbarLinks = styled.nav`

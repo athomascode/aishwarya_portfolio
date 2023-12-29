@@ -33,7 +33,7 @@ export default function Edit() {
   return (
     <div>
       <MainWrapper className="mt-5">
-      <Heading ff="'Acme', sans-serif" mb="1rem">Lingo Ladder</Heading>
+      <Heading mb="1rem">Lingo Ladder</Heading>
       <FlexRow style={{marginLeft: "2rem"}}>
         <FlexCol justify="flex-start">
           <BackIcon size={30} onClick={() => navigate('/lingoladder')} />

@@ -7,11 +7,10 @@ export const BackgroundWrapper = styled.div`
               url(${BgImage});
   background-position: center;
   min-height: inherit;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 `;
 
 export const ProfileSection = styled.div`
-  padding: 5px;
   flex: 1;
 `;
 
@@ -28,12 +27,11 @@ export const ProfileSummary = styled.p`
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
-  font-weight: 600;
+  font-weight: 500;
 `;
 
 export const SkillBox = styled.div`
   flex: 1;
-  border: 3px solid ${colors.orange};
   border-radius: 25px;
   padding: 20px;
   margin: 10px;
@@ -57,10 +55,10 @@ export const SkillSubBox =styled.div`
 `;
 
 export const ProjectBox = styled.div`
-  border: 3px solid ${colors.orange};
   border-radius: 25px;
   padding: 20px;
   margin: 10px;
   text-align: center;
   background-color: ${colors.offwhite};
+  width: fit-content;
 `;

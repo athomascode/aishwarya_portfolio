@@ -32,7 +32,7 @@ export default function LingoLadder() {
 
   return (
     <MainWrapper className="mt-5">
-      <Heading ff="'Acme', sans-serif" mb="1rem">LINGO LADDER</Heading>
+      <Heading mb="1rem">Lingo Ladder</Heading>
       <FlexRow width="95vw">
         <FlexCol justify="flex-end">
           <AddIcon size={35} onClick={() => navigate('/lingoladder/new')} />
