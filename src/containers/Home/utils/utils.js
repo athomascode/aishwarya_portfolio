@@ -37,5 +37,5 @@ export const skillsList = [
 export const profileInfo = {
   name: "Hi , I'm Aishwarya Thomas.",
   role: "SOFTWARE DEVELOPER",
-  summary: "Experienced Web Developer with over 5 years of hands-on experience at navigating all stages of the development life cycle. Passionate about innovate problem-solving, analysis and debugging.",
+  summary: "Experienced Web Developer with over 5 years of hands-on experience at navigating all stages of the development life cycle. Passionate about problem-solving, analysis and debugging.",
 };
